@@ -1,0 +1,16 @@
+* { box-sizing: border-box; }
+/* QUESTION: What is the actual gap? 60px or 40px?
+  ANSWER: 40px. 
+  Why? Because vertical margins in CSS "collapse" into each other. They do not add together. The browser takes the larger of the two touching margins (40px) and ignores the smaller one (20px). 
+  When does it NOT happen? Margin collapse does NOT happen on horizontal margins (left/right), on elements with Flexbox/CSS Grid, or on inline-block elements.
+*/
+.first {
+  background-color: #ffe0e0;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+.second {
+  background-color: #e0e0ff;
+  padding: 10px;
+  margin-top: 20px;
+}

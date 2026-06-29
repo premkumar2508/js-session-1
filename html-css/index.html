@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- 
+    QUESTION: What does the viewport meta tag do?
+    ANSWER: It forces the browser to render the page width at the exact physical width of the device screen (width=device-width) and sets the initial zoom to 100% (initial-scale=1.0). Without this, mobile phones will zoom way out and render your site like a tiny desktop screen.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premkumar | Portfolio</title>
+  <!-- 
+    QUESTION: Why is the stylesheet linked in <head> and not at the bottom of <body>?
+    ANSWER: The browser parses HTML from top to bottom. If CSS is at the bottom, the browser will render the raw, ugly HTML text first, then suddenly flash to the styled version once it reaches the bottom (known as FOUC - Flash of Unstyled Content). Putting it in the head ensures the browser knows the rules before it paints the screen.
+  -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- 
+    QUESTION: The page looks identical before and after adding semantic tags. Why bother?
+    ANSWER: Semantic tags (<header>, <main>, <section>) are not for visuals. They are API endpoints for machines. They tell Google's SEO scrapers what the content means, and they allow screen readers to navigate the page for blind users. A <div> means absolutely nothing to a machine.
+  -->
+  <header>
+    <h1>Premkumar</h1>
+    <nav>
+      <!-- 
+        QUESTION: What does href="#about" do?
+        ANSWER: It creates an anchor link. The browser looks for an element on the same page with the exact id="about" and mathematically calculates its Y-axis position, instantly jumping the scrollbar to those coordinates.
+      -->
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <!-- 
+        QUESTION: Cascade in Action
+        What colour is the paragraph and why?
+        ANSWER: It is Green.
+        Why? Because ID selectors (#about-paragraph) have mathematically higher specificity weight than Class selectors (.intro-text) or Tag selectors (p). 
+        To make the `p` tag win, you would have to use the `!important` flag (e.g. `color: black !important;`), which is terrible engineering practice.
+        Specificity from lowest to highest: Tag -> Class -> ID -> Inline Style -> !important.
+      -->
+      <p id="about-paragraph" class="intro-text">I am an engineering student learning to build strict, professional software architectures.</p>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>C</li>
+        <li class="highlight">JavaScript</li>
+        <li>TypeScript</li>
+        <li>HTML & CSS</li>
+      </ul>
+    </section>
+    <section id="experience">
+      <h2>Experience</h2>
+      <ol>
+        <li>Git Architecture and Branching</li>
+        <li>JavaScript Runtime Constraints</li>
+        <li>TypeScript Static Compilation</li>
+      </ol>
+    </section>
+    <section id="contact-section">
+      <h2>Contact</h2>
+      <a href="https://github.com/premkumar2508">Visit my GitHub</a>
+      <img src="https://placehold.co/300x200" alt="Placeholder graphic for contact section" />
+    </section>
+    <section>
+      <h2>Block vs Inline Demo</h2>
+      <!-- 
+        QUESTION: Block vs Inline elements by default.
+        ANSWER:
+        Block elements (take up 100% width, force line breaks): <p>, <h1>-<h6>, <div>, <section>, <ul>.
+        Inline elements (only take up as much width as their content, sit side-by-side): <a>, <span>, <strong>, <em>, <img>.
+      -->
+      <p>This is a paragraph — block element</p>
+      <p>This is another paragraph — notice it starts on a new line</p>
+      <p>
+        This sentence has
+        <strong>bold text</strong>,
+        <em>italic text</em>, and a
+        <a href="#">link</a>
+        all flowing inline within the paragraph.
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2026 Premkumar. All rights reserved.</p>
+  </footer>
+</body>
+</html>

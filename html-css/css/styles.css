@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+.highlight {
+  background-color: #ffeaa7;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+#contact-section {
+  background-color: #fd0d05;
+  padding: 15px;
+  border-radius: 8px;
+}
+p {
+  color: black;
+}
+.intro-text {
+  color: blue;
+}
+#about-paragraph {
+  color: green;
+}
+nav {
+  margin-top: 15px;
+}
+nav a {
+  margin-right: 15px;
+  color: #007bff;
+  text-decoration: none;
+}
