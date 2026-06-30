@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <button id="theme-toggle">Toggle Dark Mode</button>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Task Tracker</h1>
+    </header>
+
+    <main>
+        <section>
+            <form id="task-form">
+                <label for="task-name">Task Name</label>
+                <input type="text" id="task-name" required>
+
+                <label for="task-priority">Priority</label>
+                <select id="task-priority" required>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+                <label for="task-date">Due Date</label>
+                <input type="date" id="task-date" required>
+
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+
+        <section>
+            <div id="controls">
+                <span id="task-counter">Showing 0 of 0 tasks</span>
+                
+                <button class="filter-btn" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="done">Done</button>
+                <select id="sort-select">
+                    <option value="">Sort By...</option>
+                    <option value="priority">By Priority</option>
+                    <option value="dueDate">By Due Date</option>
+                </select>
+            </div>
+
+            <ul id="task-list"></ul>
+            
+            <button id="clear-all">Clear All</button>
+        </section>
+
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Priority</th>
+                        <th>Task Count</th>
+                    </tr>
+                </thead>
+                <tbody id="summary-body">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Premkumar @ Tacbot</p>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
